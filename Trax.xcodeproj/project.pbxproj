@@ -80,8 +80,6 @@
 				A400BA451AC6800600DFF20C /* AppDelegate.swift */,
 				A400BA471AC6800600DFF20C /* ViewController.swift */,
 				A400BA491AC6800600DFF20C /* Main.storyboard */,
-				A400BA4C1AC6800600DFF20C /* Images.xcassets */,
-				A400BA4E1AC6800600DFF20C /* LaunchScreen.xib */,
 				A400BA431AC6800600DFF20C /* Supporting Files */,
 			);
 			path = Trax;
@@ -90,6 +88,8 @@
 		A400BA431AC6800600DFF20C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A400BA4C1AC6800600DFF20C /* Images.xcassets */,
+				A400BA4E1AC6800600DFF20C /* LaunchScreen.xib */,
 				A400BA441AC6800600DFF20C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -161,6 +161,7 @@
 				TargetAttributes = {
 					A400BA3F1AC6800500DFF20C = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = N4736FT298;
 					};
 					A400BA541AC6800600DFF20C = {
 						CreatedOnToolsVersion = 6.2;
@@ -338,6 +339,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Trax/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -348,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Trax/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
