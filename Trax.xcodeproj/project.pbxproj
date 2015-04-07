@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		A400BA461AC6800600DFF20C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A400BA451AC6800600DFF20C /* AppDelegate.swift */; };
-		A400BA481AC6800600DFF20C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A400BA471AC6800600DFF20C /* ViewController.swift */; };
+		A400BA481AC6800600DFF20C /* GPXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A400BA471AC6800600DFF20C /* GPXViewController.swift */; };
 		A400BA4B1AC6800600DFF20C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A400BA491AC6800600DFF20C /* Main.storyboard */; };
 		A400BA4D1AC6800600DFF20C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A400BA4C1AC6800600DFF20C /* Images.xcassets */; };
 		A400BA501AC6800600DFF20C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A400BA4E1AC6800600DFF20C /* LaunchScreen.xib */; };
 		A400BA5C1AC6800600DFF20C /* TraxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A400BA5B1AC6800600DFF20C /* TraxTests.swift */; };
+		A42670061AD3B8DF00BE6DFF /* GPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42670051AD3B8DF00BE6DFF /* GPX.swift */; };
+		A42670081AD3BC2100BE6DFF /* MKGPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42670071AD3BC2100BE6DFF /* MKGPX.swift */; };
+		A426700A1AD3C6D200BE6DFF /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42670091AD3C6D200BE6DFF /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +32,16 @@
 		A400BA401AC6800500DFF20C /* Trax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A400BA441AC6800600DFF20C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A400BA451AC6800600DFF20C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A400BA471AC6800600DFF20C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A400BA471AC6800600DFF20C /* GPXViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPXViewController.swift; sourceTree = "<group>"; };
 		A400BA4A1AC6800600DFF20C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A400BA4C1AC6800600DFF20C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A400BA4F1AC6800600DFF20C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A400BA551AC6800600DFF20C /* TraxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TraxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A400BA5A1AC6800600DFF20C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A400BA5B1AC6800600DFF20C /* TraxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxTests.swift; sourceTree = "<group>"; };
+		A42670051AD3B8DF00BE6DFF /* GPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPX.swift; sourceTree = "<group>"; };
+		A42670071AD3BC2100BE6DFF /* MKGPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKGPX.swift; sourceTree = "<group>"; };
+		A42670091AD3C6D200BE6DFF /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				A400BA451AC6800600DFF20C /* AppDelegate.swift */,
-				A400BA471AC6800600DFF20C /* ViewController.swift */,
+				A400BA471AC6800600DFF20C /* GPXViewController.swift */,
+				A42670071AD3BC2100BE6DFF /* MKGPX.swift */,
 				A400BA491AC6800600DFF20C /* Main.storyboard */,
 				A400BA431AC6800600DFF20C /* Supporting Files */,
 			);
@@ -88,6 +95,8 @@
 		A400BA431AC6800600DFF20C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A42670091AD3C6D200BE6DFF /* ImageViewController.swift */,
+				A42670051AD3B8DF00BE6DFF /* GPX.swift */,
 				A400BA4C1AC6800600DFF20C /* Images.xcassets */,
 				A400BA4E1AC6800600DFF20C /* LaunchScreen.xib */,
 				A400BA441AC6800600DFF20C /* Info.plist */,
@@ -213,8 +222,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A400BA481AC6800600DFF20C /* ViewController.swift in Sources */,
+				A400BA481AC6800600DFF20C /* GPXViewController.swift in Sources */,
+				A42670081AD3BC2100BE6DFF /* MKGPX.swift in Sources */,
+				A426700A1AD3C6D200BE6DFF /* ImageViewController.swift in Sources */,
 				A400BA461AC6800600DFF20C /* AppDelegate.swift in Sources */,
+				A42670061AD3B8DF00BE6DFF /* GPX.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +422,7 @@
 				A400BA611AC6800600DFF20C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A400BA621AC6800600DFF20C /* Build configuration list for PBXNativeTarget "TraxTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +431,7 @@
 				A400BA641AC6800600DFF20C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
