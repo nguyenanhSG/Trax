@@ -33,7 +33,7 @@ class GPXViewController: UIViewController, MKMapViewDelegate {
     
     private func clearWaypoints() {
         if mapView?.annotations != nil {
-            mapView.removeAnnotations(mapView.annotations as [MKAnnotation])
+            mapView.removeAnnotations(mapView.annotations as! [MKAnnotation])
         }
     }
     
@@ -70,7 +70,7 @@ class GPXViewController: UIViewController, MKMapViewDelegate {
                 view.leftCalloutAccessoryView = UIImageView(frame: Constants.LeftCalloutFrame)
             }
             if waypoint.imageURL != nil {
-                view.rightCalloutAccessoryView = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as UIButton
+                view.rightCalloutAccessoryView = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as! UIButton
             }
         }
         
