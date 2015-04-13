@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pVa-nK-zVV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pVa-nK-zVV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,6 +19,10 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tmJ-kA-sbc">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="zb9-7i-cWP" appends="YES" id="KHb-jg-LIu"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -32,9 +37,17 @@
                     <connections>
                         <outlet property="mapView" destination="tmJ-kA-sbc" id="NWm-Tr-Nhj"/>
                         <segue destination="QdU-N8-NCF" kind="show" identifier="Show Image" id="Avf-WB-WT4"/>
+                        <segue destination="bYQ-ea-lhf" kind="popoverPresentation" identifier="Edit Waypoint" popoverAnchorView="tmJ-kA-sbc" id="LCp-2m-J2k">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="zb9-7i-cWP">
+                    <connections>
+                        <action selector="addWaypoint:" destination="BYZ-38-t0r" id="XJM-2W-UVO"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1233" y="308"/>
         </scene>
@@ -76,6 +89,81 @@
             </objects>
             <point key="canvasLocation" x="2012" y="308"/>
         </scene>
+        <!--Edit Waypoint-->
+        <scene sceneID="KcF-4k-xas">
+            <objects>
+                <viewController id="bYQ-ea-lhf" customClass="EditWaypointViewController" customModule="Trax" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bfg-j7-fBx"/>
+                        <viewControllerLayoutGuide type="bottom" id="PNv-Hw-rWD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="igm-Ax-NFQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiF-iD-hvG">
+                                <rect key="frame" x="16" y="75" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OZy-YW-go5">
+                                <rect key="frame" x="70" y="72" width="514" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xbi-cM-huL">
+                                <rect key="frame" x="70" y="110" width="514" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCQ-Ht-HYN">
+                                <rect key="frame" x="16" y="113" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="tiF-iD-hvG" firstAttribute="top" secondItem="bfg-j7-fBx" secondAttribute="bottom" constant="11" id="1Ah-Tq-bRg"/>
+                            <constraint firstItem="OZy-YW-go5" firstAttribute="top" secondItem="bfg-j7-fBx" secondAttribute="bottom" constant="8" symbolic="YES" id="23L-a0-qoR"/>
+                            <constraint firstItem="tiF-iD-hvG" firstAttribute="leading" secondItem="igm-Ax-NFQ" secondAttribute="leadingMargin" id="AOi-U8-vMC"/>
+                            <constraint firstItem="NCQ-Ht-HYN" firstAttribute="leading" secondItem="igm-Ax-NFQ" secondAttribute="leadingMargin" constant="17" id="GrU-f1-sAf"/>
+                            <constraint firstItem="tiF-iD-hvG" firstAttribute="baseline" secondItem="OZy-YW-go5" secondAttribute="baseline" id="MXR-Oz-ZiZ"/>
+                            <constraint firstItem="xbi-cM-huL" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="igm-Ax-NFQ" secondAttribute="trailingMargin" id="OHu-CL-kym"/>
+                            <constraint firstItem="OZy-YW-go5" firstAttribute="leading" secondItem="xbi-cM-huL" secondAttribute="leading" id="T42-Oa-1vf"/>
+                            <constraint firstItem="xbi-cM-huL" firstAttribute="top" secondItem="OZy-YW-go5" secondAttribute="bottom" constant="8" symbolic="YES" id="VW6-Iu-1HV"/>
+                            <constraint firstItem="NCQ-Ht-HYN" firstAttribute="top" secondItem="tiF-iD-hvG" secondAttribute="bottom" constant="17" id="a3n-NI-XRX"/>
+                            <constraint firstItem="NCQ-Ht-HYN" firstAttribute="leading" secondItem="igm-Ax-NFQ" secondAttribute="leadingMargin" id="eOP-mK-a6N"/>
+                            <constraint firstItem="xbi-cM-huL" firstAttribute="leading" secondItem="NCQ-Ht-HYN" secondAttribute="trailing" constant="8" symbolic="YES" id="jFB-S7-8tC"/>
+                            <constraint firstItem="NCQ-Ht-HYN" firstAttribute="baseline" secondItem="xbi-cM-huL" secondAttribute="baseline" id="mK9-j3-YX7"/>
+                            <constraint firstItem="OZy-YW-go5" firstAttribute="leading" secondItem="tiF-iD-hvG" secondAttribute="trailing" constant="8" symbolic="YES" id="nVN-ng-gi1"/>
+                            <constraint firstItem="OZy-YW-go5" firstAttribute="trailing" secondItem="igm-Ax-NFQ" secondAttribute="trailingMargin" id="qC7-Bo-g1N"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1Ah-Tq-bRg"/>
+                                <exclude reference="GrU-f1-sAf"/>
+                                <exclude reference="a3n-NI-XRX"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Waypoint" id="Foe-uw-enL">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="dvY-aY-f8X">
+                            <connections>
+                                <action selector="done:" destination="bYQ-ea-lhf" id="Nrf-sc-RzM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="infoTextField" destination="xbi-cM-huL" id="LQg-a0-saP"/>
+                        <outlet property="nameTextField" destination="OZy-YW-go5" id="sfA-kc-FL3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SEy-S4-zcu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2024" y="-418"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="lW5-2V-hkS">
             <objects>
@@ -94,5 +182,26 @@
             </objects>
             <point key="canvasLocation" x="341" y="308"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="o33-gu-RPA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Orf-O5-UZ2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="L8N-BP-T03">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bYQ-ea-lhf" kind="relationship" relationship="rootViewController" id="X6C-47-ibD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3xs-Wh-oCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1212" y="-418"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="X6C-47-ibD"/>
+    </inferredMetricsTieBreakers>
 </document>

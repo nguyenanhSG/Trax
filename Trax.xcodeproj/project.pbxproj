@@ -16,6 +16,7 @@
 		A42670061AD3B8DF00BE6DFF /* GPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42670051AD3B8DF00BE6DFF /* GPX.swift */; };
 		A42670081AD3BC2100BE6DFF /* MKGPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42670071AD3BC2100BE6DFF /* MKGPX.swift */; };
 		A426700A1AD3C6D200BE6DFF /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42670091AD3C6D200BE6DFF /* ImageViewController.swift */; };
+		A49944DC1ADBB93300AF4D7D /* EditWaypointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49944DB1ADBB93300AF4D7D /* EditWaypointViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		A42670051AD3B8DF00BE6DFF /* GPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPX.swift; sourceTree = "<group>"; };
 		A42670071AD3BC2100BE6DFF /* MKGPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKGPX.swift; sourceTree = "<group>"; };
 		A42670091AD3C6D200BE6DFF /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		A49944DB1ADBB93300AF4D7D /* EditWaypointViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditWaypointViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				A400BA471AC6800600DFF20C /* GPXViewController.swift */,
 				A42670071AD3BC2100BE6DFF /* MKGPX.swift */,
 				A400BA491AC6800600DFF20C /* Main.storyboard */,
+				A49944DB1ADBB93300AF4D7D /* EditWaypointViewController.swift */,
 				A400BA431AC6800600DFF20C /* Supporting Files */,
 			);
 			path = Trax;
@@ -224,6 +227,7 @@
 			files = (
 				A400BA481AC6800600DFF20C /* GPXViewController.swift in Sources */,
 				A42670081AD3BC2100BE6DFF /* MKGPX.swift in Sources */,
+				A49944DC1ADBB93300AF4D7D /* EditWaypointViewController.swift in Sources */,
 				A426700A1AD3C6D200BE6DFF /* ImageViewController.swift in Sources */,
 				A400BA461AC6800600DFF20C /* AppDelegate.swift in Sources */,
 				A42670061AD3B8DF00BE6DFF /* GPX.swift in Sources */,
